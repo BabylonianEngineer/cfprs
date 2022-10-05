@@ -1,0 +1,43 @@
+dataSourceKey: defaultDS
+destination: example
+groupId: g1
+esMapping:
+  _index: common_alter_tissue
+  _id: _id
+  sql: "select 
+        id as _id,
+        c_comprehensive_combined_price_included_tax as cComprehensiveCombinedPriceIncludedTax,
+        c_comprehensive_combined_price_pre_tax as cComprehensiveCombinedPricePreTax,
+        c_name as cName,
+        i_auxiliary_material_cost as iAuxiliaryMaterialCost,
+        i_code as iCode,
+        i_comprehensive_combined_price_included_tax as iPrice,
+        i_comprehensive_combined_price_pre_tax as iComprehensiveCombinedPricePreTax,
+        i_comprehensive_unit_price_included_tax as iComprehensiveUnitPriceIncludedTax,
+        i_comprehensive_unit_price_pre_tax as iComprehensiveUnitPricePreTax,
+        i_job_content as iJobContent,
+        i_labor_cost as iLaborCost,
+        i_machining_cost as iMachiningCost,
+        i_main_material_cost as iMainMaterialCost,
+        i_main_material_depletion as iMainMaterialDepletion,
+        i_main_material_unit_price as iMainMaterialUnitPrice,
+        i_management_cost as iManagementCost,
+        i_measurement_rule as iMeasurementRule,
+        i_name as iName,
+        i_profit as iProfit,
+        i_project_feature as iFeature,
+        i_quantity as iQuantity,
+        i_quotation_unit as iQuotationUnit,
+        i_remark as iRemark,
+        i_specified_cost as iSpecifiedCost,
+        i_tax as iTax,
+        i_unit as iUnit,
+        r_name as rName,
+        s_name as sName,
+        t_comprehensive_combined_price_included_tax as tComprehensiveCombinedPriceIncludedTax,
+        t_comprehensive_combined_price_pre_tax as tComprehensiveCombinedPricePreTax,
+        t_name as tName,
+        u_name as uName,
+        ifnull(r_name,'#') as comName
+        from common_alter_tissue"
+  commitBatch: 3000

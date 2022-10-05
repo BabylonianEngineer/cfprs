@@ -1,0 +1,31 @@
+dataSourceKey: defaultDS
+destination: example
+groupId: g1
+esMapping:
+  _index: common_tissue
+  _id: _id
+  sql: "select
+        id as _id,
+        c_combined_price as cCombinedPrice,
+        c_fixed_labor_cost as cFixedLaborCost,
+        c_name as cName,
+        c_provisional_estimate as cProvisionalEstimate,
+        i_combined_price as iPrice,
+        i_comprehensive_unit_price as iComprehensiveUnitPrice,
+        i_fixed_labor_cost as iFixedLaborCost,
+        i_measurement_unit as iMeasurementUnit,
+        i_project_code as iCode,
+        i_project_feature_description as iFeatureDescription,
+        i_project_name as iName,
+        i_provisional_estimate as iProvisionalEstimate,
+        i_quantity as iQuantity,
+        r_name as rName,
+        s_name as sName,
+        t_combined_price as tCombinedPrice,
+        t_fixed_labor_cost as tFixedLaborCost,
+        t_name as tName,
+        t_provisional_estimate as tProvisionalEstimate,
+        u_name as uName,
+        ifnull(r_name,'#') as comName
+        from common_tissue"
+  commitBatch: 3000

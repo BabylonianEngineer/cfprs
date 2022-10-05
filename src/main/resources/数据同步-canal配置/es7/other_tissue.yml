@@ -1,0 +1,24 @@
+dataSourceKey: defaultDS
+destination: example
+groupId: g1
+esMapping:
+  _index: other_tissue
+  _id: _id
+  sql: "select
+        id as _id,
+        c_amount as cAmount,
+        c_project_name as cName,
+        c_remark as cRemark,
+        c_settlement_amount as cSettlementAmount,
+        i_amount as iPrice,
+        i_project_name as iName,
+        i_remark as iRemark,
+        i_settlement_amount as iSettlementAmount,
+        r_name as rName,
+        s_name as sName,
+        t_name as tName,
+        t_summation as tSummation,
+        u_name as uName,
+        ifnull(r_name,'#') as comName
+        from other_tissue"
+  commitBatch: 3000

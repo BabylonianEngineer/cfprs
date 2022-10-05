@@ -1,0 +1,20 @@
+dataSourceKey: defaultDS
+destination: example
+groupId: g1
+esMapping:
+  _index: main_material_sheet
+  _id: _id
+  sql: "select 
+        id as _id,
+        i_description as iDescription,
+        i_material_name as iName,
+        i_remark as iRemark,
+        i_unit as iUnit,
+        i_unit_price as iPrice,
+        r_name as rName,
+        s_name as sName,
+        t_name as tName,
+        u_name as uName,
+        ifnull(r_name,'#') as comName
+        from main_material_sheet"
+  commitBatch: 3000
